@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>calculator</title>
+    <link rel="stylesheet" href="index.css">
+  </head>
+  <body>
+    <div class="calculator">
+      <input type="text" id="display" readonly />
+      <div class="button-container">
+        <button class="b2" onclick="display('')">c</button>
+        <button class="b2" onclick="display('1')">1</button>
+
+        <button class="b2" onclick="display('2')">2</button>
+
+        <button class="b2" onclick="display('+')">+</button>
+
+        <button class="b2" onclick="display('3')">3</button>
+
+        <button class="b2" onclick="display('4')">4</button>
+
+        <button class="b2" onclick="display('-')">-</button>
+
+        <button class="b2" onclick="display('5')">5</button>
+
+        <button class="b2" onclick="display('6')">6</button>
+
+        <button class="b2" onclick="display1('x')">x</button>
+
+        <button class="b2" onclick="display('7')">7</button>
+
+        <button class="b2" onclick="display('8')">8</button>
+
+        <button class="b2" onclick="display1('÷')">÷</button>
+
+        <button class="b2" onclick="display('=')">=</button>
+
+        <button class="b2" onclick="display('9')">9</button>
+
+        <button class="b2" onclick="display('0')">0</button>
+
+        <button class="b2" onclick="display('.')"><b>.</b></button>
+      </div>
+    </div>
+
+    <script>
+      let currDisplay = "";
+      function display(Display) {
+        if (Display === "") {
+          document.querySelector("#display").value = "";
+          currDisplay = "";
+        }
+        else if(Display  === '=')
+        {
+       
+            // Replace 'x' with '*' before using eval
+            currDisplay = currDisplay.replace('x', '*');
+            currDisplay = currDisplay.replace('÷', '/');
+
+            currDisplay = eval(currDisplay);
+            document.querySelector("#display").value = currDisplay;
+        
+
+        }
+        else {
+          currDisplay += Display;
+          document.querySelector("#display").value = currDisplay;
+        }
+ 
+      }
+
+
+      function display1(Display){
+        if(Display == 'x')
+        {
+              currDisplay = currDisplay+Display;
+          document.querySelector("#display").value = (currDisplay);
+
+        }
+
+        else{
+          currDisplay = currDisplay+Display;
+          document.querySelector("#display").value = (currDisplay);
+        }
+      }
+    </script>
+  </body>
+</html>

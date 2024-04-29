@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>Practise set</title>
+  </head>
+  <body>
+    <h3 id="greeting"></h3>
+    <button id="b1" onclick="click();">0</button>
+
+    <script>
+      function Greet(Name) {
+        let date = new Date();
+        let hours = date.getHours();
+        let heading = document.querySelector("#greeting");
+
+        if (hours > 5 && hours < 12) {
+          heading.innerText = "Good morning " + Name;
+        } else if (hours > 12 && hours < 18) {
+          heading.innerText = "Good aftenoon " + Name;
+        } else {
+          heading.innerText = "Good night " + Name;
+        }
+      }
+
+      Greet("Neeraj");
+
+      let Click = 0;
+
+      function click() {
+        let buttonPressed = Click++;
+        let button = document.querySelector('#b1');
+        button.innerText = Click++;
+      }
+    </script>
+  </body>
+</html>

@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Document</title>
+</head>
+<style>
+.btn {
+    height: 80px; 
+    width: 80px;
+    background: cyan;
+    font-size:30px;
+  }
+
+  .js-btn-bouble{
+    height: 40px; 
+    width: 160px;
+   background: rebeccapurple;
+    font-size:15px;
+  }
+</style>
+<body>
+ <!-- <button class="btn"  onclick="
+ setTimeout(doubletheSize,2000)">click</button> -->
+
+
+ <button class="btn">click</button>
+
+     <script> 
+
+        // 1
+        let mul = (num1,num2) => num1*num2;
+        let multi = mul(10,5);
+        console.log(multi);
+
+        // 2
+        let fun = () => console.log("hello world");
+
+        let newfun = fun(fun());
+
+        // 3
+       // using onclick
+
+       function doubletheSize() {
+
+        let size = document.querySelector('.btn');
+
+        size.classList.add('js-btn-bouble');
+
+       }
+
+    
+       // using  event listner
+
+       let event = () => setTimeout(doubletheSize, 1000);
+         let buttonElement = document.querySelector('.btn');
+        buttonElement.addEventListener('click',event);
+          
+
+    </script>
+</body>
+</html>

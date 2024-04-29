@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>Array and Loops</title>
+  </head>
+  <body>
+    <script>
+      let arr = [5, 6];
+      arr.shift(4);
+      arr.push(7);
+      console.log(arr);
+
+      let arr1 = [4, 5, 8, 3, 6, 1, 10, 5, 97];
+
+      console.log(arr1.slice(1, 4));
+
+      console.log(position(arr1, 4));
+
+      function position(arr, index) {
+        for (let i = 0; i < arr.length; i++) {
+          if (i === index) {
+            return arr[i];
+          }
+        }
+      } 
+
+      function isPrime(num){
+        for(let i = 2; i < num ; i++)
+        {
+            if(num % i === 0){
+                return false;
+
+            }
+        }
+        return true;
+      }
+
+      let count = 0;
+      let num = 2
+      while (count < 6) {
+        if(isPrime(num))
+        {
+            console.log(num);
+            count+=1;
+            
+        }
+        num++;
+      }
+
+
+       
+//  let num = 10;
+ 
+//  for(let i = 10 ; i > 0 ;i--)
+//  {
+//      console.log(i);
+//  }
+ 
+ let arr3 =[1,-6,5,7,-98];
+ 
+ for(let i =0;i<arr.length;i++)
+ {
+     if(arr[i]<0)
+     {
+         continue;
+     }
+     console.log(arr[i]);
+ }
+    </script>
+  </body>
+</html>

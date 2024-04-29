@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>Local Storage</title>
+  </head>
+  <body>
+    <script>
+      /*localStorage.setItem('Name','Neeraj');
+        localStorage.setItem('Age','20'); */
+
+      console.log(localStorage.getItem("Age"));
+
+      let product = {
+        color: "Blue",
+        Brand: "Puma",
+        Price: "999",
+      };
+
+      localStorage.setItem("product", JSON.stringify(product));
+
+      console.log(product);
+
+      localStorage.removeItem("Age");
+
+      localStorage.setItem('DOB','');
+      console.log(localStorage.getItem(JSON.parse("DOB")));
+
+    </script>
+  </body>
+</html>

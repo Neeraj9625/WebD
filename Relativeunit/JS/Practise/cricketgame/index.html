@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>Cricket Game</title>
+    <style>
+      body {
+        text-align: center;
+      }
+    </style>
+  </head>
+  <body>
+    <h1>Cricket Game</h1>
+
+    <button
+      class="b1"
+      onclick=" let choice=randomChoice();
+         let result =  getresult(computerchoice,'Bat');  
+         showresult('Bat',choice,result)  "
+    >
+      Bat
+    </button>
+
+    <button
+      class="b1"
+      onclick="choice=randomChoice();
+        result =  getresult(computerchoice,'Ball');  
+        showresult('Ball',choice,result) ;"
+    >
+      Ball
+    </button>
+
+    <button
+      class="b1"
+      onclick="
+           choice=randomChoice(); 
+           result =  getresult(computerchoice,'Wicket'); 
+           showresult('Wicket',choice,result) "
+      ;
+    >
+      Wicket
+    </button>
+    <h3 id="usermove"></h3>
+
+    <h3 id="computer-move"></h3>
+
+    <h3 id="result"></h3>
+
+    <script>
+      let score = {
+        win: 0,
+        lost: 0,
+        tie: 0,
+        displayScore: function () {
+          return "Won:${score.win},  lost:${score.lost} ,  tie:${score.tie}";
+        },
+      };
+
+      let computerchoice;
+      function randomChoice() {
+        let random = Math.random() * 3;
+        if (random > 0 && random <= 1) {
+          computerchoice = "Bat";
+          return computerchoice;
+        } else if (random > 1 && random <= 2) {
+          computerchoice = "Ball";
+          return computerchoice;
+        } else {
+          computerchoice = "Wicket";
+          return computerchoice;
+        }
+      }
+      function getresult(computerchoice, userMove) {
+        let result;
+        if (userMove === "Bat") {
+          if (computerchoice === "Ball") {
+            score.win++;
+            return (result = "you win");
+          } else if (computerchoice === "Wicket") {
+            score.lost++;
+            return (result = "Computer  win");
+          } else {
+            score.tie++;
+            return (result = "its tie");
+          }
+        } else if (userMove === "Ball") {
+          if (computerchoice === "Ball") {
+            score.tie++;
+            return (result = "it`s Tie");
+          } else if (computerchoice === "Wicket") {
+            score.win++;
+            return (result = "User  win");
+          } else {
+            score.lost++;
+            return (result = "computer win");
+          }
+        } else {
+          if (computerchoice === "Ball") {
+            score.lost++;
+            return (result = "computer win");
+          } else if (computerchoice === "Wicket") {
+            score.tie++;
+            return (result = "its tie");
+          } else {
+            score.win++;
+            return (result = "user win");
+          }
+        }
+      }
+      function showresult(usermove, computerchoice, result) {
+        localStorage.setItem("score", JSON.stringify(score));
+
+        document.querySelector(
+          "#usermove"
+         ).innerText = `You choose ${usermove} `;
+         document.querySelector(
+          "#computer-move"
+         ).innerText = `computer choose  ${computerchoice} `;
+        document.querySelector("#result").innerText = `${result} `;
+
+        alert(`You choose ${usermove}  and computer choose  ${computerchoice}  and 
+               
+        Won:${score.win},  lost:${score.lost} ,  tie:${score.tie}
+         
+          ${result}`);
+      }
+    </script>
+  </body>
+</html>

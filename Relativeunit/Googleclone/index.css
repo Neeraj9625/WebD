@@ -1,0 +1,58 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+.logo{
+    display: flex;
+    justify-content: center;
+    height: 122px;
+    margin-top: 310px;
+    padding-bottom: 20px;
+
+}
+.navBar{
+    /* padding-top: 20px; */
+  
+    display: flex;
+    justify-content: center;
+    border-radius: 10px; /* Adjust the value as needed */
+    overflow: hidden; /* This ensures the border-radius is applied */ 
+      padding-bottom: 20px;
+}
+.serach_bar{
+    display: flex;
+    justify-content: center;
+    border: 1px solid;
+    border-radius: 8px 0px 0px 8px;
+}
+.box{
+    border-radius: 0px 8px 8px 0px;
+    border: 1px solid black;
+    width: 250px;
+    overflow: hidden;
+}
+.button1{
+    display: flex;
+    justify-content: center;
+    padding-right: 10px;
+}
+.button2{
+    padding: 10px;
+  
+}
+.button3{
+    padding: 10px;
+}
+.lan{
+    display: flex;
+    justify-content: center;
+   
+}
+.text{
+    text-decoration:none;
+}
+input{
+    width: 100%;
+    height:100%
+}
+

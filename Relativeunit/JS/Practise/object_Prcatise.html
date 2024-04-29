@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>object Practise set</title>
+</head>
+<body>
+    <script>
+        let product ={
+            company_Name:'H&M',
+            Price:990,
+            Material:'cotton',
+            delivery_time:'Monday',
+        };
+        console.log(product['delivery_time']);
+
+        let age = {
+            myage:30,
+            your_age:29,
+        }
+        let age2=age;
+        console.log(age2.myage);
+
+        age2.myage=40;
+        console.log(age.myage);
+         
+
+        let obj ={
+            message:'Good job',
+            status:'Complete',
+        };
+
+        let {message,status}=obj;
+
+        console.log(message);
+        console.log(status);
+
+    </script>
+</body>
+</html>
